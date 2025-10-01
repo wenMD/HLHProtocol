@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HLH Diagnosis & Treatment Protocol | LPCH Stanford</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #8C1515 0%, #B83A4B 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        nav {
+            background: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        nav li {
+            margin-right: 2rem;
+        }
+        
+        nav a {
+            display: block;
+            padding: 1rem 0;
+            color: #8C1515;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+        
+        nav a:hover {
+            border-bottom-color: #8C1515;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .alert-box {
+            background: #FFF3CD;
+            border-left: 4px solid #FFC107;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        
+        .alert-box strong {
+            color: #856404;
+        }
+        
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        h2 {
+            color: #8C1515;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        h4 {
+            color: #555;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .protocol-card {
+            background: #f8f9fa;
+            border-left: 4px solid #8C1515;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .drug-protocol {
+            background: #e8f4f8;
+            border-left: 4px solid #0288D1;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .drug-protocol strong {
+            color: #01579B;
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .severity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .severity-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid;
+        }
+        
+        .severity-mild {
+            background: #E8F5E9;
+            border-color: #4CAF50;
+        }
+        
+        .severity-moderate {
+            background: #FFF3E0;
+            border-color: #FF9800;
+        }
+        
+        .severity-severe {
+            background: #FFEBEE;
+            border-color: #F44336;
+        }
+        
+        .severity-card h4 {
+            margin-top: 0;
+        }
+        
+        ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background: #8C1515;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .evidence-box {
+            background: #F3E5F5;
+            border-left: 4px solid #9C27B0;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+            margin: 1.5rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: #8C1515;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-bottom: 1.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.5rem;
+            top: 0.5rem;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #8C1515;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #8C1515;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .key-metric {
+            display: inline-block;
+            background: #8C1515;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            margin: 0.25rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav li {
+                margin-right: 0;
+            }
+            
+            .severity-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>HLH Diagnosis & Treatment Protocol</h1>
+            <p class="subtitle">Lucile Packard Children's Hospital at Stanford | Evidence-Based Guidelines 2025</p>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#diagnosis">Diagnosis</a></li>
+            <li><a href="#treatment">Treatment</a></li>
+            <li><a href="#monitoring">Monitoring</a></li>
+            <li><a href="#special">Special Populations</a></li>
+            <li><a href="#evidence">Evidence Base</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <div class="alert-box">
+            <strong>⚠️ Critical Action Required:</strong> HLH is a rapidly progressive, life-threatening condition. Treatment should not be delayed for diagnostic confirmation. Time to treatment initiation target: <strong>&lt;6 hours from diagnosis</strong>.
+        </div>
+        
+        <section id="overview">
+            <h2>Overview & General Principles</h2>
+            
+            <h3>Treatment Objectives</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Immediate:</strong> Control life-threatening hyperinflammation
+                </div>
+                <div class="timeline-item">
+                    <strong>Short-term:</strong> Prevent organ damage and death
+                </div>
+                <div class="timeline-item">
+                    <strong>Long-term:</strong> Address underlying triggers and achieve cure when possible
+                </div>
+            </div>
+            
+            <h3>Risk Stratification</h3>
+            <div class="severity-grid">
+                <div class="severity-card severity-mild">
+                    <h4>Mild HLH/MAS</h4>
+                    <p>Limited organ dysfunction with stable vital signs</p>
+                </div>
+                <div class="severity-card severity-moderate">
+                    <h4>Moderate HLH/MAS</h4>
+                    <p>Evidence of organ dysfunction (SOFA score 2+ in non-hematologic systems)</p>
+                </div>
+                <div class="severity-card severity-severe">
+                    <h4>Severe HLH/MAS</h4>
+                    <p>Life-threatening organ failure, need for organ support, CNS involvement</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="diagnosis">
+            <h2>Diagnostic Approach</h2>
+            
+            <h3>Clinical Suspicion Triggers</h3>
+            <ul>
+                <li><strong>Sepsis-like illness</strong> unresponsive to appropriate therapy</li>
+                <li><strong>Unexplained cytopenias</strong> with hepatosplenomegaly</li>
+                <li><strong>Ferritin &gt;500 μg/L</strong> (&gt;10,000 μg/L highly suspicious)</li>
+                <li><strong>Fever with coagulopathy</strong> in rheumatologic patients</li>
+            </ul>
+            
+            <div class="evidence-box">
+                <strong>Key Finding:</strong> Ferritin &gt;10,000 μg/L has 96% specificity and 90% sensitivity for HLH (Henter, Pediatric Blood & Cancer 2008)
+            </div>
+            
+            <h3>Rapid Diagnostic Workup</h3>
+            
+            <div class="protocol-card">
+                <h4>Initial Panel (Obtain within 4 hours)</h4>
+                <ul>
+                    <li>Complete blood count with differential</li>
+                    <li>Comprehensive metabolic panel</li>
+                    <li>Ferritin (with dilutions if &gt;10,000)</li>
+                    <li>Fibrinogen, triglycerides</li>
+                    <li>LDH, AST/ALT, bilirubin</li>
+                    <li>Soluble CD25 (if available)</li>
+                </ul>
+            </div>
+            
+            <div class="protocol-card">
+                <h4>Secondary Testing (Within 24 hours)</h4>
+                <ul>
+                    <li>Bone marrow aspirate for hemophagocytosis</li>
+                    <li>Imaging for hepatosplenomegaly</li>
+                    <li>Flow cytometry for NK cell function (pediatric patients)</li>
+                    <li>Genetic testing panel (if primary HLH suspected)</li>
+                </ul>
+            </div>
+            
+            <p><span class="key-metric">Diagnostic Goal: &lt;24 hours from suspicion</span></p>
+        </section>
+        
+        <section id="treatment">
+            <h2>Treatment Protocols</h2>
+            
+            <h3>Supportive Care (All Patients)</h3>
+            <ul>
+                <li><strong>ICU monitoring</strong> for moderate-severe cases</li>
+                <li><strong>Infection control:</strong> Broad-spectrum antibiotics if febrile/neutropenic</li>
+                <li><strong>Organ support:</strong> Mechanical ventilation, vasopressors, RRT as needed</li>
+                <li><strong>Blood products:</strong> Maintain Hgb &gt;7 g/dL, platelets &gt;20K (&gt;50K if bleeding)</li>
+                <li><strong>Nutritional support:</strong> Early enteral nutrition when feasible</li>
+            </ul>
+            
+            <h3>Primary HLH Treatment</h3>
+            
+            <h4>Standard Protocol (HLH-2004 Based)</h4>
+            
+            <div class="drug-protocol">
+                <strong>Etoposide</strong>
+                150 mg/m² IV twice weekly × 2 weeks, then weekly
+                <div class="evidence-box">
+                    <strong>Rationale:</strong> Selectively depletes activated CD8+ T cells that drive cytokine storm. Pre-HSCT survival improved from 73% (HLH-94) to 81% (HLH-2004). 5-year survival of 59% (Bergsten et al., Blood 2017).
+                </div>
+            </div>
+            
+            <div class="drug-protocol">
+                <strong>Dexamethasone</strong>
+                10 mg/m²/day divided q12h × 2 weeks, then taper
+                <div class="evidence-box">
+                    <strong>Rationale:</strong> Provides immediate anti-inflammatory effect and superior CNS penetration (critical given 30-73% of pediatric cases have neurologic involvement).
+                </div>
+            </div>
+            
+            <div class="drug-protocol">
+                <strong>Cyclosporine</strong>
+                Target level 200-400 ng/mL
+                <div class="evidence-box">
+                    <strong>Rationale:</strong> Targets T-cell activation through calcineurin inhibition, provides sustained immunosuppression to prevent reactivation.
+                </div>
+            </div>
+            
+            <h4>Alternative Agents</h4>
+            
+            <div class="drug-protocol">
+                <strong>Emapalumab (if etoposide contraindicated)</strong>
+                1 mg/kg IV twice weekly, increase to 3-10 mg/kg based on response
+                <div class="evidence-box">
+                    <strong>Evidence:</strong> 70% overall response rate in refractory/relapsed patients (Locatelli et al., NEJM 2020). However, only 41% survived without additional chemotherapy. Most patients still require additional immunosuppression. Higher cost requires careful consideration.
+                </div>
+            </div>
+            
+            <div class="drug-protocol">
+                <strong>Alemtuzumab (experienced centers only)</strong>
+                10 mg/m² IV 3× weekly
+                <div class="evidence-box">
+                    <strong>Use for:</strong> Severe refractory cases. Provides potent lymphocyte depletion with rapid onset. Requires experienced center due to significant immunosuppression risk.
+                </div>
+            </div>
+            
+            <h4>CNS Involvement</h4>
+            <ul>
+                <li>High-dose dexamethasone: 10-20 mg/m²/day</li>
+                <li>Intrathecal therapy: Methotrexate 12-15 mg IT weekly</li>
+                <li>Consider intensified systemic therapy</li>
+            </ul>
+            
+            <h3>Secondary HLH Treatment</h3>
+            
+            <h4>Infection-Associated HLH</h4>
+            
+            <div class="protocol-card">
+                <strong>Mild-Moderate Cases:</strong>
+                <ul>
+                    <li>Treat underlying infection aggressively</li>
+                    <li>Dexamethasone: 0.5-1 mg/kg/day × 3-5 days</li>
+                    <li>IVIG: 1-2 g/kg divided over 2-5 days</li>
+                </ul>
+            </div>
+            
+            <div class="protocol-card">
+                <strong>Severe Cases:</strong>
+                <ul>
+                    <li>Add Etoposide: 100 mg/m² weekly (adults), 75 mg/m² (elderly)</li>
+                    <li>Anakinra: 2-10 mg/kg/day IV/SC (particularly for sepsis-associated HLH)</li>
+                </ul>
+                <div class="evidence-box">
+                    <strong>Anakinra Rationale:</strong> Targets IL-1β elevation in sepsis-associated hyperinflammation. Safer immunosuppression profile compared to etoposide in septic patients (Shakoory et al., Critical Care Medicine 2016).
+                </div>
+            </div>
+            
+            <h4>Malignancy-Associated HLH</h4>
+            
+            <div class="protocol-card">
+                <strong>Two-Step Approach:</strong>
+                <ol>
+                    <li><strong>Stabilization Phase:</strong> Etoposide 75-100 mg/m² + dexamethasone + IVIG</li>
+                    <li><strong>Cancer Treatment Phase:</strong> Once organ function improves</li>
+                </ol>
+                <div class="evidence-box">
+                    <strong>Note:</strong> Worst prognosis among HLH subtypes (20-30% 2-year survival). Must stabilize organ function before cancer-specific therapy can be tolerated. Most common undiagnosed trigger in adults.
+                </div>
+            </div>
+            
+            <h3>MAS-HLH Treatment</h3>
+            
+            <h4>First-Line Therapy</h4>
+            
+            <div class="drug-protocol">
+                <strong>Methylprednisolone</strong>
+                30 mg/kg/day (max 1g) IV × 3-5 days
+            </div>
+            
+            <div class="drug-protocol">
+                <strong>Cyclosporine</strong>
+                2-7 mg/kg/day (target trough 100-150 ng/mL)
+            </div>
+            
+            <div class="drug-protocol">
+                <strong>Consider Anakinra</strong>
+                2-10 mg/kg/day
+                <div class="evidence-box">
+                    <strong>Rationale:</strong> Directly targets IL-1 pathway hyperactive in MAS pathophysiology. Lower mortality risk (5-10%) allows for less intensive initial approach compared to other HLH forms.
+                </div>
+            </div>
+            
+            <h4>Refractory MAS-HLH</h4>
+            <ul>
+                <li><strong>Etoposide:</strong> 50-100 mg/m² weekly × 1-3 doses (lower doses than primary HLH)</li>
+                <li><strong>Emapalumab:</strong> 1-10 mg/kg twice weekly</li>
+                <li><strong>JAK inhibitors:</strong> Ruxolitinib 0.5 mg/kg BID (pediatric)</li>
+            </ul>
+        </section>
+        
+        <section id="monitoring">
+            <h2>Monitoring & Response Criteria</h2>
+            
+            <h3>Response Assessment (Weekly)</h3>
+            
+            <table>
+                <tr>
+                    <th>Category</th>
+                    <th>Response Indicators</th>
+                </tr>
+                <tr>
+                    <td><strong>Clinical Response</strong></td>
+                    <td>
+                        • Fever resolution<br>
+                        • Improved organ function<br>
+                        • Stable hemodynamics
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Laboratory Response</strong></td>
+                    <td>
+                        • Decreasing ferritin (&gt;50% reduction)<br>
+                        • Improving cytopenias<br>
+                        • Normalizing triglycerides/fibrinogen
+                    </td>
+                </tr>
+            </table>
+            
+            <h3>Treatment Modifications</h3>
+            
+            <h4>Dose Reductions</h4>
+            <ul>
+                <li><strong>Etoposide:</strong> Reduce by 25-50% for severe cytopenias</li>
+                <li><strong>Age-adjusted dosing:</strong> Adults 75 mg/m², elderly 50 mg/m²</li>
+            </ul>
+            
+            <div class="evidence-box">
+                <strong>Evidence:</strong> Reduced doses in adults and elderly maintain efficacy with less toxicity (La Rosée et al., Blood 2019)
+            </div>
+            
+            <h4>Treatment Duration</h4>
+            <ul>
+                <li><strong>Primary HLH:</strong> Minimum 8 weeks, until HSCT</li>
+                <li><strong>Secondary HLH:</strong> 4-8 weeks based on response</li>
+                <li><strong>MAS-HLH:</strong> 2-6 weeks, taper with steroid response</li>
+            </ul>
+        </section>
+        
+        <section id="special">
+            <h2>Special Populations</h2>
+            
+            <h3>Pediatric Modifications</h3>
+            <ul>
+                <li>Age-appropriate dosing calculations</li>
+                <li><strong>Mandatory genetic testing</strong></li>
+                <li>Early HSCT evaluation for primary HLH</li>
+                <li>Growth and development monitoring</li>
+            </ul>
+            
+            <h3>Adult Considerations</h3>
+            <ul>
+                <li>Higher malignancy association</li>
+                <li>Comorbidity management</li>
+                <li>Reduced-intensity regimens for elderly</li>
+                <li>Infection prophylaxis</li>
+            </ul>
+            
+            <h3>Pregnancy</h3>
+            <ul>
+                <li>Multidisciplinary team approach</li>
+                <li>Modified drug regimens (avoid etoposide if possible)</li>
+                <li>Fetal monitoring</li>
+                <li>Delivery planning</li>
+            </ul>
+        </section>
+        
+        <section id="evidence">
+            <h2>Evidence Base & Key References</h2>
+            
+            <h3>Major Studies Supporting This Protocol</h3>
+            
+            <div class="evidence-box">
+                <strong>Henter et al., NEJM 2025</strong><br>
+                Comprehensive HLH review: Pre-HSCT survival improved from 73% (HLH-94) to 81% (HLH-2004). HSCT outcomes have improved significantly with better patient selection and conditioning.
+            </div>
+            
+            <div class="evidence-box">
+                <strong>Hines et al., Critical Care Medicine 2022</strong><br>
+                Histiocyte Society consensus guidelines for ICU management. Key finding: Treatment should not be delayed for diagnostic confirmation. 60% of pediatric HLH requires ICU support with 36-68% mortality.
+            </div>
+            
+            <div class="evidence-box">
+                <strong>Bergsten et al., Blood 2017</strong><br>
+                Confirmed long-term efficacy of HLH-2004 protocol with 5-year survival of 59%.
+            </div>
+            
+            <div class="evidence-box">
+                <strong>Locatelli et al., NEJM 2020</strong><br>
+                Emapalumab study: 70% overall response rate in refractory/relapsed patients. Important limitation: Only 41% survived without additional chemotherapy.
+            </div>
+            
+            <div class="evidence-box">
+                <strong>Shakoory et al., Critical Care Medicine 2016</strong><br>
+                IL-1 receptor blockade (anakinra) associated with reduced mortality in sepsis patients with MAS features.
+            </div>
+            
+            <h3>Quality Metrics</h3>
+            
+            <h4>Process Measures</h4>
+            <ul>
+                <li><span class="key-metric">Time to diagnosis: &lt;24 hours</span></li>
+                <li><span class="key-metric">Time to treatment: &lt;6 hours</span></li>
+                <li>Ferritin monitoring frequency</li>
+                <li>Infection surveillance compliance</li>
+            </ul>
+            
+            <h4>Outcome Measures</h4>
+            <ul>
+                <li>30-day mortality</li>
+                <li>ICU length of stay</li>
+                <li>Treatment-related toxicities</li>
+                <li>Long-term sequelae rates</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Implementation Requirements</h2>
+            
+            <p>This protocol requires:</p>
+            <ul>
+                <li>✓ Institutional commitment to 24/7 laboratory capability</li>
+                <li>✓ Multidisciplinary team including hematology, critical care, pharmacy</li>
+                <li>✓ Standardized order sets for rapid treatment initiation</li>
+                <li>✓ Regular protocol review based on emerging evidence</li>
+                <li>✓ Staff education on HLH recognition and management</li>
+            </ul>
+            
+            <div class="alert-box">
+                <strong>Protocol Emphasis:</strong> Early recognition, prompt treatment initiation, and individualized therapy based on disease severity and underlying triggers. Regular monitoring and adjustment are essential for optimal outcomes.
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p><strong>Lucile Packard Children's Hospital at Stanford</strong></p>
+        <p>HLH Treatment Protocol Committee | Last Updated: 2025</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+            For questions or protocol updates, contact the Hematology/Oncology service
+        </p>
+    </footer>
+</body>
+</html>
